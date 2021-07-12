@@ -1,28 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Media from '../components/media';
+import '../css/campaign/media.css';
 
 const MediaList = (props) => {
-	const [ mediaData, setMediaData] = useState(null)
-	
 
-	useEffect(() => {
-		const fetchData = async () => {
-			fetch('https://www.plugco.in/public/take_home_sample_feed')
-				.then( resp => resp.json() )
-				.then( data => console.log(data) )
-				.catch( err => console.log(err) )
-		}
-		fetchData();
-		return () => {
-			setMediaData(null)
-		}
-	}, [])
+  const { medias, name } = props;
+  const mapMedia = datas => {
+    const medias = datas.map( media => {
+      const { cover_photo_url, download_url, media_type, tracking_link} = media;
+      return <Media cover={cover_photo_url} download={download_url} type={media_type} tracking={tracking_link} name={name} />
+    })
+    return medias;
+  }
 
-
-	const mapMedia = (props) => {};
 	return (
-		
 		<div className="media-list">
-			<div />
+      {mapMedia(medias)}
 		</div>
 	);
 };

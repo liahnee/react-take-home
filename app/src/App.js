@@ -1,11 +1,11 @@
 import React from 'react';
-import MediaList from './containers/mediaList';
+import CampaignList from './containers/campaignList';
 import './css/app.css';
 
 function App() {
   return (
     <div className="App">
-      <MediaList />
+      <CampaignList />
     </div>
   );
 }

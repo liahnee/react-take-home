@@ -1,0 +1,22 @@
+.media-list {
+  display: flex;
+  height: fit-content;
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  overflow:scroll;
+  overflow-x: scroll;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  & img {
+    width: 150px;
+  }
+  margin: 0;
+}
+
+.media-button {
+  width: 65px
+}
